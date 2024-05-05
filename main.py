@@ -14,7 +14,7 @@ animal_factory = AnimalFactory()
 
 class MenuChoice(Enum):
     BUY_SEED = "1"
-    HARVEST_CROP = "2"
+    HARVEST_CROPS = "2"
     BUY_ANIMAL = "3"
     INTERACT_ANIMAL = "4"
     CHECK_INVENTORY = "5"
@@ -64,7 +64,7 @@ class Player:
             os.system("cls" if os.name == "nt" else "clear")
             print("\n===== Farm Menu =====")
             print("1. Buy and plant a seed")
-            print("2. Harvest Crop")
+            print("2. Harvest Crops")
             print("3. Buy Animals")
             print("4. Interact with Animals")
             print("5. Check Inventory")
@@ -92,7 +92,7 @@ class Player:
                         print("Invalid choice!")
                     self.buy(plant)
 
-                case MenuChoice.HARVEST_CROP:
+                case MenuChoice.HARVEST_CROPS:
                     self.harvest_crops()
 
                 case MenuChoice.BUY_ANIMAL:
