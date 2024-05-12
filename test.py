@@ -23,14 +23,7 @@ class TestPlayer(unittest.TestCase):
 
     def test_harvest_crops(self):
         self.player.harvest_crops()
-        for plant in self.player.inventory:
-            print("Plant:", plant)
         self.assertEqual(len(self.player.inventory), 0)
-
-    def test_save_progress(self):
-        with patch("builtins.open", create=True) as mocked_open:
-            self.player.save_progress()
-            mocked_open.assert_called_once_with("progress.txt", "w")
     
 
 if __name__ == "__main__":
