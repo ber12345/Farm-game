@@ -67,7 +67,7 @@ class Tomato(Plant):
 ```
 
 ##### Encapsulation
-<p>Encapsulation refers to the bundling of data (variables) and methods (functions) that operate on the data into a single unit called an object. It also involves restricting direct access to some of an object's components, which is a means of preventing accidental interference and misuse of the data. I use encapsulation in my code to make some attributes protected. So that attributes and methods can be accessed within the class and its subclasses. For example. A protected method that can be accessed within the ItemFactory class as shown in the code below:
+<p>Encapsulation refers to the bundling of data (variables) and methods (functions) that operate on the data into a single unit called an object. It also involves restricting direct access to some of an object's components, which is a means of preventing accidental interference and misuse of the data. I use encapsulation in my code to make some attributes protected. So that attributes and methods can be accessed within the class and its subclasses. For example. A protected method that can be accessed within the ItemFactory class as shown in the code below:<br>
 
 ```
     def _create_item_object(self, item_type):
@@ -105,4 +105,4 @@ class Player:
 
 #
 #### Conclusions 
-While doing this coursework I learned new things like factory method pattern, how to do unit testing and how to write and read from files. This application became a simple game about farming with relatively limited game functions which still were hard to code right, but after a while everything worked. This application could be extended by adding more plants and animals, also adding more functions like watering the plants for them to grow or actually earning money from interacting with animals. Also days could be added so your plants take a certain amount of days to grow and you pass the days by sleeping. But it would be too difficult for me to code as of now so this program is what i have.
+<p>While doing this coursework I learned new things like factory method pattern, how to do unit testing and how to write and read from files. This application became a simple game about farming with relatively limited game functions which still were hard to code right, but after a while everything worked. This application could be extended by adding more plants and animals, also adding more functions like watering the plants for them to grow or actually earning money from interacting with animals. Also days could be added so your plants take a certain amount of days to grow and you pass the days by sleeping. But it would be too difficult for me to code as of now so this program is what i have.<br>
