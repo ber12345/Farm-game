@@ -18,7 +18,7 @@
 
 Also it includes a pattern:
 <ul>
-
+  <li>Decorator</li>
   <li>Factory method</li>
 </ul>
 
@@ -90,6 +90,10 @@ class Player:
         self.owned_animals = animal_factory.parse_names(animal_names)
 ```
 
+#### Decorator
+
+<p>The Decorator pattern is a structural design pattern that allows behavior to be added to individual objects, dynamically and transparently, without affecting the behavior of other objects from the same class. This is particularly useful for adhering to the open/closed principle, allowing classes to be open for extension but closed for modification. It is most suitable in the program because it decorates item to be an enchanced item.
+
 #### Factory method
 
 <p>The Factory Method pattern is used in the provided code to create instances of items and animals in a structured and extensible manner. This design pattern defines an interface for creating an object but allows subclasses to alter the type of objects that will be created. The Factory Method pattern is most suitable in this scenerio, because it encapsulates object creation, supports polymorphic creation of objects, and makes it easy to extend the system with new types of items and animals. Other patterns either add unnecessary complexity or do not provide the same level of flexibility in managing object creation.<br>
@@ -97,7 +101,7 @@ class Player:
 #
 ### Results
 <ul>
-  <li>Made a simple farm game which can be played using user input</li>
+  <li>There is a chance to get enchanced plant which sells for more</li>
   <li>The game can show how much of each item you have in your inventory</li>
   <li>Made many improvements to the code over time. At first it wasn't possible to buy multiples also sell multiples of items and now its possible</li>
   <li>The progress saves correctly which at first didn't</li>
