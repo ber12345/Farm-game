@@ -101,7 +101,7 @@ class Player:
 #
 ### Results
 <ul>
-  <li>There is a chance to get enchanced plant which sells for more</li>
+  <li>In the game there is a  a chance to get enchanced version of a plant which sells for more</li>
   <li>The game can show how much of each item you have in your inventory</li>
   <li>Made many improvements to the code over time. At first it wasn't possible to buy multiples and sell multiples items and now its possible</li>
   <li>The progress saves correctly which at first didn't</li>
