@@ -114,7 +114,7 @@ class ItemFactory:
 
     def parse_names(self, names):
         items = []
-        if names[0] == "":
+        if names == [] or names[0] == "":
             return items
         for name in names:
             if "Rare" in name:
@@ -151,7 +151,7 @@ class AnimalFactory:
 
     def parse_names(self, names):
         animals = []
-        if names[0] == "":
+        if names == [] or names[0] == "":
             return animals
         for name in names:
             animal = self.create_animal(name)
