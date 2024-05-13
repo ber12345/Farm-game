@@ -15,7 +15,7 @@ class Plant(Purchaseable):
     def __init__(self, name, cost):
         self.name = name
         self.resell_value = cost * 2
-        self.cost = cost
+        super().__init__(cost=cost)
 
     def buy(self):
         print(f"Bought {self.name} seeds for ${self.cost}")
@@ -41,7 +41,7 @@ class Carrot(Plant):
 
 class Animal(Purchaseable):
     def __init__(self, name, cost):
-        self.cost = cost
+        super().__init__(cost=cost)
         self.name = name
 
     def buy(self):
@@ -54,8 +54,7 @@ class Animal(Purchaseable):
 
 class Cow(Animal):
     def __init__(self):
-        self.name = "Cow"
-        self.cost = 50
+        super().__init__("Cow", cost=50)
 
     def interact(self):
         print("Milked the cow. You got fresh milk!")
@@ -63,8 +62,7 @@ class Cow(Animal):
 
 class Chicken(Animal):
     def __init__(self):
-        self.name = "Chicken"
-        self.cost = 30
+        super().__init__("Chicken", cost=30)
 
     def interact(self):
         print("Collected eggs from the chicken. You got fresh eggs!")
@@ -72,8 +70,7 @@ class Chicken(Animal):
 
 class Cat(Animal):
     def __init__(self):
-        self.name = "Cat"
-        self.cost = 40
+        super().__init__("Cat", cost=20)
 
     def interact(self):
         print("You petted the cat!")
@@ -119,17 +116,14 @@ class ItemFactory:
         items = []
         if names == [] or names[0] == "":
             return items
-
         for name in names:
             if "Rare" in name:
-                item_name = name.split()[1]
-                item = self._create_item_object(item_name)
+                item = self._create_item_object(name.split()[1])
                 self.enhance_seeds(item)
-
+                items.append(item)
             else:
                 item = self._create_item_object(name)
-
-            items.append(item)
+                items.append(item)
 
         return items
 
@@ -159,7 +153,6 @@ class AnimalFactory:
         animals = []
         if names == [] or names[0] == "":
             return animals
-            
         for name in names:
             animal = self.create_animal(name)
             animals.append(animal)

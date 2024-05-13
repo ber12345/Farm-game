@@ -25,6 +25,7 @@ class MenuChoice(Enum):
 class Player:
     def __init__(self, money, item_names, animal_names):
         self._money = money
+
         self.inventory = item_factory.parse_names(item_names)
         self.owned_animals = animal_factory.parse_names(animal_names)
 
@@ -116,14 +117,11 @@ class Player:
                 case MenuChoice.CHECK_INVENTORY:
                     if len(self.inventory) == 0:
                         print("Your inventory is empty!")
-
                     else:
                         print("\nInventory:")
                         item_counts = {}
                         for item in self.inventory:
-                            item_count = item_counts.get(item.name, 0) + 1
-                            item_counts[item.name] = item_count
-                            
+                            item_counts[item.name] = item_counts.get(item.name, 0) + 1
                         for item, count in item_counts.items():
                             print(f"{item}: {count}")
 
@@ -139,12 +137,8 @@ class Player:
     def save_progress(self):
         with open("progress.txt", "w") as file:
             file.write(f"{self._money}\n")
-
-            item_names = [item.name for item in self.inventory]
-            file.write(",".join(item_names), "\n")             
-
-            animal_names = [animal.name for animal in self.owned_animals]
-            file.write(",".join(animal_names) + "\n")
+            file.write(",".join([item.name for item in self.inventory]) + "\n")
+            file.write(",".join([animal.name for animal in self.owned_animals]) + "\n")
 
 
 if __name__ == "__main__":
@@ -153,7 +147,6 @@ if __name__ == "__main__":
             money = int(file.readline())
             inventory = file.readline().strip().split(",")
             owned_animals = file.readline().strip().split(",")
-            
     except FileNotFoundError:
         money = 100
         inventory = []
